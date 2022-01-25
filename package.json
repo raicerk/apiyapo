@@ -1,0 +1,25 @@
+{
+  "name": "api-yapo",
+  "version": "1.0.0",
+  "description": "API para prueba tecnica de yapo.cl",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raicerk/apiyapo.git"
+  },
+  "keywords": [
+    "nodejs",
+    "fastify",
+    "rest",
+    "api"
+  ],
+  "author": "Juan Mora",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raicerk/apiyapo/issues"
+  },
+  "homepage": "https://github.com/raicerk/apiyapo#readme"
+}
