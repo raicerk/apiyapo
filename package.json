@@ -2,7 +2,7 @@
   "name": "api-yapo",
   "version": "1.0.0",
   "description": "API para prueba tecnica de yapo.cl",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {
     "test": "test"
   },
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/raicerk/apiyapo/issues"
   },
-  "homepage": "https://github.com/raicerk/apiyapo#readme"
+  "homepage": "https://github.com/raicerk/apiyapo#readme",
+  "dependencies": {
+    "fastify": "^3.27.0"
+  }
 }
