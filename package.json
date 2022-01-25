@@ -23,6 +23,11 @@
   },
   "homepage": "https://github.com/raicerk/apiyapo#readme",
   "dependencies": {
-    "fastify": "^3.27.0"
+    "@hapi/boom": "^9.1.4",
+    "axios": "^0.25.0",
+    "dotenv": "^14.3.2",
+    "fastify": "^3.27.0",
+    "fastify-swagger": "^4.13.1",
+    "qs": "^6.10.3"
   }
 }
