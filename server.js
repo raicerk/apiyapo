@@ -7,12 +7,14 @@ const fastify = require('fastify')({
   querystringParser: str => qs.parse(str)
 }) // Require the fastify framework and instantiate it
 
+
+fastify.register(require('fastify-swagger'), swagger.options) // Register Swagger
+
+
 // Loop over each route
 routes.forEach((route, index) => {
   fastify.route(route)
 })
-
-fastify.register(require('fastify-swagger'), swagger.options) // Register Swagger
 
 
 // Run the server!
