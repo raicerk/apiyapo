@@ -1,14 +1,15 @@
-const axios = require('axios');
+const axios = require('axios'); // Import external dependency
+const moment = require('moment'); // Import external dependency for format date
 
 const uf = async () => {
   try {
-    const { data } = await axios.get('https://mindicador.cl/api/uf/25-01-2022');
+    const { data } = await axios.get(process.env.URL_API_UF + moment().format(process.env.DATE_FORMAT));
     return data.serie[0].valor;
   } catch (error) {
     return false;
   }
 }
 
-uf().then(result => {
-  console.log(result);
-})
+module.exports = {
+  uf
+}

@@ -1,12 +1,10 @@
-// External Dependancies
-const boom = require('@hapi/boom');
-const serviceMath = require('../services/math.service')
+const boom = require('@hapi/boom') // External Dependancies
+const serviceMath = require('../services/math.service') // Import Math Service
 
 // Get PI number with limit random
 exports.getPiRandomLimit = async (req, reply) => {
   try {
     const PiCalc = serviceMath.piWithLen(req.query.random_limit)
-    console.log(PiCalc)
     return {
       PiCalc
     }
