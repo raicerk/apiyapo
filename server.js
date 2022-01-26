@@ -7,15 +7,13 @@ const fastify = require('fastify')({
   querystringParser: str => qs.parse(str)
 }) // Require the fastify framework and instantiate it
 
-
 fastify.register(require('fastify-swagger'), swagger.options) // Register Swagger
-
+fastify.register(require('fastify-redis'), { host: process.env.REDIS_HOST }) // Register Redis
 
 // Loop over each route
-routes.forEach((route, index) => {
+routes(fastify).forEach((route, index) => {
   fastify.route(route)
 })
-
 
 // Run the server!
 const start = async () => {

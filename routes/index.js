@@ -6,7 +6,7 @@ const finantialController = require('../controllers/finantial.controller')
 const mathSchema = require('../schemas/math.schema')
 const finantialSchema = require('../schemas/finantial.schema')
 
-const routes = [
+module.exports = fastify => [
   {
     method: 'GET',
     url: '/',
@@ -20,5 +20,3 @@ const routes = [
     handler: mathController.getPiRandomLimit
   }
 ]
-
-module.exports = routes
