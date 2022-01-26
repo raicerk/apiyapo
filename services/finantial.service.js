@@ -15,7 +15,7 @@ const uf = async (redis) => {
       return await redis.get('UF', (err, valUF) => valUF)
     }
   } catch (error) {
-    return false;
+    return error;
   }
 }
 
