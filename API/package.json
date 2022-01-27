@@ -9,6 +9,7 @@
   "jest": {
     "testEnvironment": "node",
     "verbose": true,
+    "bail": true,
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@types/jest": "^27.4.0",
     "ioredis-mock": "^6.0.0",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "nock": "^13.2.2"
   }
 }
