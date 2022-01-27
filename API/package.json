@@ -4,7 +4,7 @@
   "description": "API para prueba tecnica de yapo.cl",
   "main": "server.js",
   "scripts": {
-    "test": "jest --testTimeout=10000 --detectOpenHandles"
+    "test": "jest --testTimeout=100000"
   },
   "jest": {
     "testEnvironment": "node",
