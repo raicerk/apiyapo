@@ -1,0 +1,37 @@
+version: "3.5"
+
+networks:
+  yapo:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/24
+
+services:
+  DB:
+    image: "redis"
+    deploy:
+      restart_policy:
+        condition: on-failure
+    container_name: "redis"
+    ports:
+      - 6379:6379
+    networks:
+      yapo:
+        ipv4_address: 172.21.0.2
+  API:
+    image: api
+    deploy:
+      restart_policy:
+        condition: on-failure
+    container_name: "api"
+    build: "./API"
+    ports:
+      - 8000:5000
+    networks:
+      yapo:
+        ipv4_address: 172.21.0.3
+    env_file:
+      - ".env"
+    depends_on:
+      - DB
