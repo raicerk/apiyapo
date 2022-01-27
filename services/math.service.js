@@ -6,5 +6,6 @@ const randomLen = (lenMax) => parseInt(Math.random() * ((parseInt(lenMax) + MIN_
 const piWithLen = (lenMax) => "3."+ Math.PI.toString().slice(START_SLICE, randomLen(parseInt(lenMax)) + START_SLICE).toString();
 
 module.exports = {
-  piWithLen
+  piWithLen,
+  randomLen
 }
