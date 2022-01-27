@@ -27,11 +27,13 @@ services:
     container_name: "api"
     build: "./API"
     ports:
-      - 8000:5000
+      - 8000:3000
     networks:
       yapo:
         ipv4_address: 172.21.0.3
     env_file:
-      - ".env"
+      - "./API/.env"
+    environment:
+      - REDIS_HOST=172.21.0.2
     depends_on:
       - DB
