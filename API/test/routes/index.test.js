@@ -1,3 +1,5 @@
+jest.mock('ioredis', () => require('ioredis-mock/jest'));
+
 const build = require('../../app')
 const app = build();
 
