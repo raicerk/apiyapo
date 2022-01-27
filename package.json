@@ -4,10 +4,11 @@
   "description": "API para prueba tecnica de yapo.cl",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --testTimeout=10000 --detectOpenHandles"
   },
   "jest": {
     "testEnvironment": "node",
+    "verbose": true,
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ]
@@ -40,6 +41,6 @@
   },
   "devDependencies": {
     "jest": "^27.4.7",
-    "supertest": "^6.2.2"
+    "@types/jest": "^27.4.0"
   }
 }
