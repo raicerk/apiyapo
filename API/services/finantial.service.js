@@ -6,8 +6,7 @@ const uf = async (redis) => {
     const date = moment().format(process.env.DATE_FORMAT);
     const valDate = await redis.get('date', (err, valDate) => valDate)
     if (valDate != date) {
-      const { data } = await axios.get(process.env.URL_API_UF + date);
-      const valorUF = data.serie[0].valor;
+      const valorUF = await getUFval(date)
       redis.set('date', date)
       redis.set('UF', valorUF)
       return valorUF;
@@ -19,6 +18,16 @@ const uf = async (redis) => {
   }
 }
 
+const getUFval = async (date) => {
+  try {
+    const { data } = await axios.get(process.env.URL_API_UF + date);
+    return data.serie[0].valor;
+  } catch (error) {
+    return error;
+  }
+}
+
 module.exports = {
-  uf
+  uf,
+  getUFval
 }
