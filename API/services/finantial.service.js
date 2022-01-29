@@ -14,7 +14,7 @@ const uf = async (redis) => {
       return await redis.get('UF', (err, valUF) => valUF)
     }
   } catch (error) {
-    return error;
+    throw new Error('Redis error')
   }
 }
 
@@ -23,7 +23,7 @@ const getUFval = async (date) => {
     const { data } = await axios.get(process.env.URL_API_UF + date);
     return data.serie[0].valor;
   } catch (error) {
-    return error;
+    throw new Error('Axios error')
   }
 }
 
