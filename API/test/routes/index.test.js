@@ -9,7 +9,6 @@ describe('Sample Test', () => {
       method: 'GET',
       url: "/",
     });
-    console.log(res)
     expect(res.statusCode).toEqual(200)
   });
 })
