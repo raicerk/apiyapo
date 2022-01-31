@@ -7,7 +7,6 @@ const moment = require('moment'); // Importamor dependencias externas para el fo
  * @returns 
  */
 const uf = async (redis) => {
-  console.log(redis)
   try {
     const date = moment().format(process.env.DATE_FORMAT);
     const valDate = await redis.get('date', (err, valDate) => valDate)
