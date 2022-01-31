@@ -43,3 +43,6 @@ En caso de usar docker, pueden ingresar a:
 http://localhost:8000/documentation
 ```
 
+# ¿Como aseguraria la API?
+
+Hay varios métodos para securitizar una API, en sí dependiendo de la necesidad de negocio, partiría agregando una capa de autenticación, para esto los métodos más comunes pueden ser JWT, Oauth2 o basic autentication, si bien los 3 son métodos para agregar una capa de seguridad y autenticación para las API, tienen distintas implementaciones
