@@ -1,7 +1,12 @@
 const boom = require('@hapi/boom') // External Dependancies
 const serviceMath = require('../services/math.service') // Import Math Service
 
-// Get PI number with limit random
+/**
+ * Función de controlador para retornar el valor de PI usando un valor máximo de largo
+ * @param {*} req 
+ * @param {*} reply 
+ * @returns json object
+ */
 exports.getPiRandomLimit = async (req, reply) => {
   try {
     const PiCalc = serviceMath.piWithLen(req.query.random_limit)

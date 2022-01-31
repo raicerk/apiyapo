@@ -1,11 +1,16 @@
-// Import our Controllers
+// Importamos nuestros Controladores
 const mathController = require('../controllers/math.controller')
 const finantialController = require('../controllers/finantial.controller')
 
-// Import schema for Swagger
+// Importamos schema para Swagger
 const mathSchema = require('../schemas/math.schema')
 const finantialSchema = require('../schemas/finantial.schema')
 
+/**
+ * Definición de rutas de la API
+ * @param {*} fastify 
+ * @returns 
+ */
 module.exports = fastify => [
   {
     method: 'GET',

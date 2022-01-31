@@ -1,3 +1,6 @@
+/**
+ * Configuración de swagger para la definición de los metodos de la API
+ */
 exports.options = {
   routePrefix: '/documentation',
   exposeRoute: true,

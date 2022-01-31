@@ -3,8 +3,8 @@ jest.mock('ioredis', () => require('ioredis-mock/jest'));
 const build = require('../../app')
 const app = build();
 
-describe('Sample Test', () => {
-  it("default root route", async () => {
+describe('Test de ruta principal', () => {
+  it("Test de retorno de valor exitoso de la UF del día", async () => {
     const res = await app.inject({
       method: 'GET',
       url: "/",
@@ -13,8 +13,8 @@ describe('Sample Test', () => {
   });
 })
 
-describe('Sample Test', () => {
-  it("Pi limit", async () => {
+describe('Test de ruta de pi', () => {
+  it("Test de retorno exitoso de Pi con limite máximo de largo", async () => {
     const LIMIT_MAX_RANDOM = 3
     const res = await app.inject({
       method: 'GET',

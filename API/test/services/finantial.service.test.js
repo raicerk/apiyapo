@@ -4,7 +4,7 @@ const finantial = require('../../services/finantial.service');
 const VALUE_UF = 32188.60
 const DATE = '28-01-2022'
 
-describe('Sample Test', () => {
+describe('Test de servicio financiero exitoso', () => {
 
   process.env.URL_API_UF = 'https://mindicador.cl/api/uf/'
 
@@ -24,13 +24,13 @@ describe('Sample Test', () => {
       ]
     })
 
-  it('should test that true === true', async () => {
+  it('Test de retorno exitoso del valor de la UF del día', async () => {
     const ufval = await finantial.getUFval(DATE)
     expect(ufval).toBe(VALUE_UF)
   })
 })
 
-describe('Redis error', () => {
+describe('Test de servicio financiero con error de redis', () => {
 
   process.env.URL_API_UF = 'https://mindicador.cl/api/uf/'
 
@@ -50,14 +50,16 @@ describe('Redis error', () => {
       ]
     })
 
-  it('should test that true === true', async () => {
-
-    const ufval = await finantial.getUFval(DATE)
-    expect(ufval).toBe(VALUE_UF)
+  it('Test con retorno de error en redis para la obtención del valor de la UF', async () => {
+    try {
+      const ufval = await finantial.uf()
+    } catch (error) {
+      expect(error.message).toBe('Redis error')
+    }
   })
 })
 
-describe('Error sample test', () => {
+describe('Test de servicio financiero con error de axios', () => {
 
   process.env.URL_API_UF = 'https://mindicador.cl/api/uf/'
 
@@ -65,7 +67,7 @@ describe('Error sample test', () => {
     .get(`/api/uf/${DATE}`)
     .reply(500, 'FAILED!');
 
-  it('should test that true === true', async () => {
+  it('Test de retorno de error de axios por error de respuesta en el servicio de la UF', async () => {
     try {
       await finantial.getUFval(DATE)
     } catch (error) {
@@ -73,4 +75,3 @@ describe('Error sample test', () => {
     }
   })
 })
-
